@@ -1,0 +1,57 @@
+spring:
+  profiles:
+    active: catsriding
+
+  output:
+    ansi:
+      enabled: always
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/playgrounds
+    username: catsriding
+    password: catsriding
+
+  jpa:
+    database: mysql
+    open-in-view: false
+    generate-ddl: false
+    properties:
+      hibernate:
+        default_batch_fetch_size: 1000
+        format_sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+  devtools:
+    add-properties: false
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  forward-headers-strategy: framework
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  error:
+    include-binding-errors: never
+    include-exception: false
+    include-message: never
+    include-stacktrace: never
+    path: /error
+    whitelabel:
+      enabled: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql: trace
