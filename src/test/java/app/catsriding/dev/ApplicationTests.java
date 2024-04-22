@@ -1,4 +1,4 @@
-package app.catsriding.comments;
+package app.catsriding.dev;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
